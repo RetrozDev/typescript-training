@@ -31,7 +31,24 @@ console.info(presentPerson(person));
 // Exercise 3: Classes and Methods
 // Create a class with a property "name" and a method that returns a message indicating the sound the animal makes.
 // Create a subclass that inherits from this class and overrides the method to return a specific sound.
+class Animal {
+	name: string;
+	constructor(name: string) {
+		this.name = name;
+	}
+    shout():string {
+        return"This animal make a sound !"
+    }
+}
 
+class Dog extends Animal {
+    shout(): string {
+        return "Woof !"
+    }
+}
+
+const rex = new Dog("Rex")
+console.info(`${rex.name} shout ${rex.shout()}`)
 // Exercise 4: Generics
 // Create a generic function that takes an array of type T and returns an array of type T but reversed.
 
