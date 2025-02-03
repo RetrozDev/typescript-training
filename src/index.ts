@@ -36,27 +36,38 @@ class Animal {
 	constructor(name: string) {
 		this.name = name;
 	}
-    shout():string {
-        return"This animal make a sound !"
-    }
+	shout(): string {
+		return "This animal make a sound !";
+	}
 }
 
 class Dog extends Animal {
-    shout(): string {
-        return "Woof !"
-    }
+	shout(): string {
+		return "Woof !";
+	}
 }
 
-const rex = new Dog("Rex")
-console.info(`${rex.name} shout ${rex.shout()}`)
+const rex = new Dog("Rex");
+console.info(`${rex.name} shout ${rex.shout()}`);
 
 // Exercise 4: Generics
 // Create a generic function that takes an array of type T and returns an array of type T but reversed.
-const reverseArray = <T,>(arr: T[]): T[] => {
-    return arr.reverse()
+const reverseArray = <T>(arr: T[]): T[] => {
+	return arr.reverse();
 };
 
-console.table(reverseArray([1, 2]))
+console.table(reverseArray([1, 2]));
 // Exercise 5: Promises and Asynchronous Programming
 // Write an asynchronous function that takes a number of milliseconds as a parameter
 // and returns a promise that resolves after this delay.
+const delay = async (ms: number): Promise<void> => {
+	return new Promise((resolve) => setTimeout(resolve, ms));
+};
+
+const delayExample = async (): Promise<void> => {
+	console.log("Start");
+	await delay(2000);
+	console.log("End after 2000 ms");
+};
+
+delayExample();
