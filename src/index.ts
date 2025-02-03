@@ -49,9 +49,14 @@ class Dog extends Animal {
 
 const rex = new Dog("Rex")
 console.info(`${rex.name} shout ${rex.shout()}`)
+
 // Exercise 4: Generics
 // Create a generic function that takes an array of type T and returns an array of type T but reversed.
+const reverseArray = <T,>(arr: T[]): T[] => {
+    return arr.reverse()
+};
 
+console.table(reverseArray([1, 2]))
 // Exercise 5: Promises and Asynchronous Programming
 // Write an asynchronous function that takes a number of milliseconds as a parameter
 // and returns a promise that resolves after this delay.
